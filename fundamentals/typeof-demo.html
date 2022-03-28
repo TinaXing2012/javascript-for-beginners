@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel="stylesheet" href="#">
+    <script>
+        console.log(typeof undefined); // "undefined"
+
+        console.log(typeof 0); // "number"
+
+        // console.log(typeof 10n); // "bigint"
+
+        console.log(typeof true); // "boolean"
+
+        console.log(typeof "foo"); // "string"
+
+        console.log(typeof Symbol("id")); // "symbol"
+
+        console.log(typeof Math); // "object"  (1)
+
+        /*
+            The result of typeof null is "object". 
+            That’s an officially recognized error in typeof, 
+            coming from very early days of JavaScript and kept for compatibility. 
+            Definitely, null is not an object. 
+            It is a special value with a separate type of its own. The behavior of typeof is wrong here.
+        */
+        console.log(typeof null); // "object"  (2)
+
+        console.log(typeof alert); // "function"  (3)
+
+        /*
+        typeof(x). It’s the same as typeof x.
+        To put it clear: typeof is an operator, not a function. 
+        The parentheses here aren’t a part of typeof.
+        It’s the kind of parentheses used for mathematical grouping like (2+3).
+        */
+        console.log(typeof('hello'));
+        console.log(typeof 'hello');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
