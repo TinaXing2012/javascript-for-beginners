@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        // while (condition) {
+        //     // code // so-called "loop body" 
+        // }
+
+        let i = 0;
+        while (i < 3) { // shows 0, then 1, then 2
+            alert(i);
+            i++;
+        }
+
+        // do {
+        //     // loop body
+        // } while (condition);
+
+        let j = 0;
+        do {
+            alert(j);
+            j++;
+        } while (j < 3);
+
+        // for (begin; condition; step) {
+        //     // ... loop body ...
+        // }
+
+
+        for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+            alert(i);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            // if true, exit the loop
+            if (i % 2 == 1) break;
+            alert(i); //0
+        }
+
+        for (let i = 0; i < 10; i++) {
+            // if true, skip the remaining part of the body
+            if (i % 2 == 0) continue;
+            alert(i); // 1, then 3, 5, 7, 9
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

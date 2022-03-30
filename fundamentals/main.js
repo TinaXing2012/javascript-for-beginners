@@ -1,0 +1,1 @@
+alert('this is in main.js');

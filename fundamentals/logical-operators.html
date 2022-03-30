@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        alert(true || true);   // true
+        alert(false || true);  // true
+        alert(true || false);  // true
+        alert(false || false); // false
+
+
+        alert(true && true);   // true
+        alert(false && true);  // false
+        alert(true && false);  // false
+        alert(false && false); // false
+
+        alert(!true); // false
+        alert(!0); // true
+        alert(!!"non-empty string"); // true
+        alert(!!null); // false
+
+
+        let firstName = null;
+        let lastName = null;
+        let nickName = "Supercoder";
+
+        // shows the first defined value:
+        alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
+    
+        // let firstName = null;
+        // let lastName = null;
+        // let nickName = "Supercoder";
+
+        // // shows the first truthy value:
+        // alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
+    </script>
+</head>
+
+<body>
+    
+</body>
+
+</html>

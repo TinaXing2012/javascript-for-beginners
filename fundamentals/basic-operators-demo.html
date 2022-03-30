@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        let x = 1;
+        x = -x;
+        console.log(x); // -1, unary negation was applied
+
+        let m = 1, n = 3;
+        console.log(m - n); // 2, binary minus subtracts values
+
+        console.log(5 % 2); // 1, a remainder of 5 divided by 2
+        console.log(8 % 3); // 2, a remainder of 8 divided by 3
+        console.log(2 ** 2); // 2² = 4
+        console.log(2 ** 3); // 2³ = 8
+        console.log(2 ** 4); // 2⁴ = 16
+
+        let s = "my" + "string";
+        console.log(s); // mystring
+
+        console.log('1' + 2); // "12"
+        console.log(2 + '1'); // "21"
+        console.log(2 + 2 + '1'); // "41" and not "221"
+        console.log('1' + 2 + 2); // "122" and not "14"
+
+
+        // No effect on numbers
+        let i = 1;
+        console.log(+i); // 1
+
+        let y = -2;
+        console.log(+y); // -2
+
+        // Converts non-numbers
+        //does the same thing as Number(...), but is shorter.
+        console.log(+true); // 1
+        console.log(+"");   // 0
+
+        console.log( 2 > 1 );  // true
+        console.log( 2 == 1 ); // false
+        console.log( 2 != 1 ); // true
+
+        console.log( 'Z' > 'A' ); // true
+        console.log( 'Glow' > 'Glee' ); // true
+        console.log( 'Bee' > 'Be' ); // true
+
+        console.log( '2' > 1 ); // true, string '2' becomes a number 2
+        console.log( '01' == 1 ); // true, string '01' becomes a number 1
+
+        console.log( true == 1 ); // true
+        console.log( false == 0 ); // true
+
+        console.log( 0 == false ); // true
+        console.log( 0 === false ); // true
+
+        console.log( undefined > 0 ); // false
+        console.log( undefined < 0 ); // false
+        console.log( undefined == 0 ); // false
+
+        console.log( NaN > 0 ); // false
+        console.log( NaN < 0 ); // false
+        console.log( NaN == 0 ); // false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
