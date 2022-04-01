@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        function makeUser(name, age) {
+            return {
+                name: name,
+                age: age,
+                // ...other properties
+            };
+        }
+
+        // let user = makeUser("John", 30);
+        // console.log(user.name); // John
+
+        function makeUser(name, age) {
+            return {
+                name, // same as name: name
+                age,  // same as age: age
+                // ...other properties
+            };
+        }
+
+        // these properties are all right
+        // let obj = {
+        //     for: 1,
+        //     let: 2,
+        //     return: 3
+        // };
+
+        // console.log(obj.for + obj.let + obj.return);  // 6
+
+        let user = { name: "John", age: 30 };
+
+        console.log("age" in user); // true, user.age exists
+        console.log("blabla" in user); // false, user.blabla doesn't exist
+
+        let obj = {
+            test: undefined
+        };
+
+        console.log(obj.test); // it's undefined, so - no such property?
+
+        console.log("test" in obj); // true, the property does exist!
+
+
+        let person = {
+            name: "John",
+            age: 30,
+            isAdmin: true
+        };
+
+        for (let key in person) {
+            // keys
+            console.log(key);  // name, age, isAdmin
+            // values for the keys
+            console.log(user[key]); // John, 30, true
+        }
+
+
+
+        let codes = {
+            "49": "Germany",
+            "41": "Switzerland",
+            "44": "Great Britain",
+            // ..,
+            "1": "USA"
+        };
+
+        for (let code in codes) {
+            console.log(code); // 1, 41, 44, 49
+        }
+
+        let codes2 = {
+            "+49": "Germany",
+            "+41": "Switzerland",
+            "+44": "Great Britain",
+            // ..,
+            "+1": "USA"
+        };
+
+        for (let code in codes2) {
+            console.log(+code); // 49, 41, 44, 1
+        }
+    </script>
+</head>
+
+<body>
+    Open developer tools -> console to see result
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        let user1 = new Object(); // "object constructor" syntax
+        let user2 = {};  // "object literal" syntax
+
+        let user = {     // an object
+            name: "John",  // by key "name" store value "John"
+            age: 30,        // by key "age" store value 30
+            "likes birds": true  // multiword property name must be quoted
+        };
+        //read a property
+        console.log(user.name); //John
+        console.log(user.age); //30
+
+        //update a property value
+        user.name = 'Miss Xing';
+        console.log(user.name); //Miss Xing
+
+        //add a new property
+        user.nationality = 'China';
+        console.log(user); //{name: 'Miss Xing', age: 30, nationality: 'China'}
+
+        //remove a property
+        delete user.age;
+        console.log(user); //{name: 'Miss Xing', nationality: 'China'}
+
+    
+    </script>
+</head>
+
+<body>
+    Open developer tools -> console to see result
+</body>
+
+</html>
