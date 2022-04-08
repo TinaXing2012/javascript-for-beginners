@@ -5,19 +5,36 @@
     <meta charset="utf-8">
     <title>My test page</title>
     <script>
-        let result = 5 > 1;
-        if (result) {
-            console.log('5 is greater than 1');
+        let age = 2;
+        let priceOfTicket = 0;
+        if( age <= 2){
+            priceOfTicket = 10;
+        } else if( age <= 18){
+            priceOfTicket = 20;
         } else {
-            console.log(' 5 IS NOT greater than 1');
+            priceOfTicket = 30;
         }
+        console.log(priceOfTicket);
 
-        let age = 12;
-        let accessAllowed = (age > 18) ? true : false;
+
+        let accessAllowed = age > 18 ? 'my age is greater than 18' : 'less than 18';
+        console.log(accessAllowed);
+
+
+        // let result = 5 > 1;
+        // if (result) {
+        //     console.log('5 is greater than 1');
+        // } else {
+        //     console.log(' 5 IS NOT greater than 1');
+        // }
+
+        // let age = 12;
+        // let accessAllowed = (age > 18) ? true : false;
         let message = (age < 3) ? 'Hi, baby!' :
-            (age < 18) ? 'Hello!' :
-                (age < 100) ? 'Greetings!' :
+                    (age < 18) ? 'Hello!' :
+                    (age < 100) ? 'Greetings!' :
                     'What an unusual age!';
+        console.log(message);
 
     </script>
 </head>
