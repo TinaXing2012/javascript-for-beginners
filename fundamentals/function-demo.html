@@ -5,20 +5,39 @@
     <meta charset="utf-8">
     <title>My test page</title>
     <script>
-        function name(parameter1 = defaultValue, parameter2, ...parameterN) {
-            //   ...body...
-        }
+        // function name(parameter1 = defaultValue, parameter2, ...parameterN) {
+        //     //   ...body...
+        // }
 
-        function showMessage(from, text = "no text given") {
-            alert(from + ": " + text);
-        }
-        showMessage("Ann"); // Ann: no text given
+        // function showMessage(from, text = "no text given") {
+        //     alert(from + ": " + text);
+        // }
+        // showMessage("Ann"); // Ann: no text given
 
         function sum(a, b) {
             return a + b;
         }
 
         let result = sum(1, 2);
+
+        let sum2 = function(a, b){
+            return a + b;
+        }
+
+        let sum3 = (a, b) => {
+            return a + b;
+        };
+
+        let sum4 = (a, b) => a + b;
+
+        let res3 = sum4(5, 7);
+        console.log(res3);
+
+        let foo = text => console.log(`Say ${text}`);
+        foo('hello');
+
+        let bar = () => console.log('arrow function no argument');
+        bar();
 
     </script>
 </head>
