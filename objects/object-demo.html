@@ -11,25 +11,93 @@
         let user = {     // an object
             name: "John",  // by key "name" store value "John"
             age: 30,        // by key "age" store value 30
-            "likes birds": true  // multiword property name must be quoted
+            'likes birds': true  // multiword property name must be quoted
         };
-        //read a property
+        console.log(user); //{name: 'John', age: 30, likes birds: true}
+        // //read a property
         console.log(user.name); //John
         console.log(user.age); //30
+        // console.log(user.'likes birds');
 
-        //update a property value
+        // //update a property value
         user.name = 'Miss Xing';
         console.log(user.name); //Miss Xing
 
-        //add a new property
+        // //add a new property
         user.nationality = 'China';
-        console.log(user); //{name: 'Miss Xing', age: 30, nationality: 'China'}
+        // user.getName = function(){
+        //     return this.name;
+        // }
+        console.log(user); //{name: 'Miss Xing', age: 30, likes birds: true, nationality: 'China'}
 
-        //remove a property
+        // //remove a property
         delete user.age;
-        console.log(user); //{name: 'Miss Xing', nationality: 'China'}
+        console.log(user); //{name: 'Miss Xing', likes birds: true, nationality: 'China'}
 
-    
+        
+        // user.likes birds = true
+        let user = {};
+
+        // set
+        user["likes birds"] = true;
+        console.log(user);
+
+        // get
+        console.log(user["likes birds"]); // true
+
+        // delete
+        delete user["likes birds"];
+        console.log(user);
+
+        let key = "likes birds";
+
+        // same as user["likes birds"] = true;
+        user.key = true;
+        user['key'] = true;
+
+        user[key] = true;
+        user['likes birds'] = true;
+        console.log(user); //{key: true} {'likes birds': true}
+
+
+        let person = {
+            name: "John",
+            age: 30
+        };
+        let result = 'name';
+        // access by variable
+        console.log(person[result]); // John (if enter "name")
+        //dot notation doesn't work
+        console.log(person.result); //undefined
+
+        function makeUser(name, age) {
+            return {
+                name: name,
+                age: age,
+                // ...other properties
+            };
+        }
+
+        // let user = makeUser("John", 30);
+        // console.log(user.name); // John
+
+        function makeUser(name, age) {
+            return {
+                name, // same as name: name
+                age,  // same as age: age
+                // ...other properties
+            };
+        }
+
+
+        // these properties are all right
+        let obj = {
+            for: 1,
+            let: 2,
+            return: 3
+        };
+
+        console.log(obj.for + obj.let + obj.return);  // 6
     </script>
 </head>
 

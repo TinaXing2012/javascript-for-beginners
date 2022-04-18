@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        // let id = Symbol();
+        // // alert(id); //Cannot convert a Symbol value to a string
+        // alert(id.toString());
+
+        // let id1 = Symbol("id");
+        // let id2 = Symbol("id");
+
+        // console.log(id1 == id2); //false
+
+        // let user = { // belongs to another code
+        //     name: "John"
+        // };
+
+        // let userId = Symbol("id");
+        // user[userId] = 1;
+        // console.log(user[userId]); // we can access the data using the symbol as the key
+
+
+        // let user = { name: "John" };
+
+        // // Our script uses "id" property
+        // user.id = "Our id value";
+
+        // // ...Another script also wants "id" for its purposes...
+
+        // user.id = "Their id value"
+        // // Boom! overwritten by another script!
+
+        // let id = Symbol("id");
+
+        // let user = {
+        //     name: "John",
+        //     [id]: 123 // not "id": 123
+        // };
+
+        // let id = Symbol("id");
+        // let user = {
+        //     name: "John",
+        //     age: 30,
+        //     [id]: 123
+        // };
+
+        // for (let key in user) {
+        //     console.log(`key: ${key}, value: ${user[key]}`);
+        // }
+
+        // // the direct access by the symbol works
+        // console.log("Direct: " + user[id]);
+        // Object.keys(user).forEach(key => console.log(`Object key: ${key}, value: ${user[key]}`));
+
+      
+        let id = Symbol.for("id");
+        let idAgain = Symbol.for("id");
+        console.log( id === idAgain ); // true
+
+    </script>
+</head>
+
+<body>
+    Open Developer tools to see result
+</body>
+
+</html>

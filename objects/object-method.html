@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        // let user = {
+        //     name: "John",
+        //     age: 30,
+        //     greet: function(){
+        //         console.log("Hi!!!!");
+        //     },
+        //     getName(){
+        //         return 'John';
+        //     }
+        // };
+
+        // user.sayHi = function () {
+        //     console.log("Hi!");
+        // };
+        // user.greet();
+        // user.getName();
+        // user.sayHi(); // Hi!
+
+        let user = {
+            name: "John",
+            age: 30,
+
+            sayHi() {
+                // "this" is the "current object"
+                console.log(this.name);
+            }
+
+        };
+
+        user.sayHi(); // John
+
+    </script>
+</head>
+
+<body>
+    Open developer tools -> console to see result
+</body>
+
+</html>

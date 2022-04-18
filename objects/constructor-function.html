@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        function User(name) {
+            // this = {};  (implicitly)
+
+            // add properties to this
+            this.name = name;
+            this.isAdmin = false;
+
+            // return this;  (implicitly)
+        }
+
+        let user = new User("Jack");
+
+        console.log(user.name); // Jack
+        console.log(user.isAdmin); // false
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
