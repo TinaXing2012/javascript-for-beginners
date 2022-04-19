@@ -5,36 +5,32 @@
     <meta charset="utf-8">
     <title>My test page</title>
     <script>
-        // let user = {
-        //     name: "John",
-        //     age: 30,
-        //     greet: function(){
-        //         console.log("Hi!!!!");
-        //     },
-        //     getName(){
-        //         return 'John';
-        //     }
-        // };
-
-        // user.sayHi = function () {
-        //     console.log("Hi!");
-        // };
-        // user.greet();
-        // user.getName();
-        // user.sayHi(); // Hi!
-
         let user = {
             name: "John",
             age: 30,
-
-            sayHi() {
-                // "this" is the "current object"
-                console.log(this.name);
+            greet: function(){
+                console.log("Hi!!!!");
+            },
+            getName(){
+                return 'John';
             }
-
         };
 
-        user.sayHi(); // John
+        console.log(user.greet);
+        console.log(user.getName);
+        user.greet();
+        console.log(user.getName());
+
+        user.sayHi = function () {
+            console.log("Hi!");
+        };
+        user.greet = function(){
+            console.log('Hello *****');
+        }
+        user.sayHi();
+        user.greet();
+
+        
 
     </script>
 </head>

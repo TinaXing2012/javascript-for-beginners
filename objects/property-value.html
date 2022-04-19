@@ -6,33 +6,45 @@
     <title>My test page</title>
     <script>
         
+        
+        // let user = { name: "John", age: 30 };
+        // let student = Object.create(user); //{}
+        // console.log(student);
+        // console.log("age" in student);
+        // console.log("name" in student);
+        // console.log(student.hasOwnProperty("age"));
 
-        let user = { name: "John", age: 30 };
+        // console.log("age" in user); // true, user.age exists
+        // console.log("blabla" in user); // false, user.blabla doesn't exist
 
-        console.log("age" in user); // true, user.age exists
-        console.log("blabla" in user); // false, user.blabla doesn't exist
+        // let obj = {
+        //     test: undefined
+        // };
 
-        let obj = {
-            test: undefined
-        };
+        // let obj2 = {
+        // };
 
-        console.log(obj.test); // it's undefined, so - no such property?
+        // console.log(obj.test); // it's undefined, so - no such property?
+        // console.log(obj2.test);
 
-        console.log("test" in obj); // true, the property does exist!
+        // console.log("test" in obj); // true, the property does exist!
+        // console.log("test" in obj2); //false
 
 
-        let person = {
-            name: "John",
-            age: 30,
-            isAdmin: true
-        };
 
-        for (let key in person) {
-            // keys
-            console.log(key);  // name, age, isAdmin
-            // values for the keys
-            console.log(user[key]); // John, 30, true
-        }
+
+        // let person = {
+        //     name: "John",
+        //     age: 30,
+        //     isAdmin: true
+        // };
+
+        // for (let key in person) {
+        //     // keys
+        //     console.log(key);  // name, age, isAdmin
+        //     // values for the keys
+        //     console.log(person[key]); // John, 30, true
+        // }
 
 
 
@@ -45,7 +57,7 @@
         };
 
         for (let code in codes) {
-            console.log(code); // 1, 41, 44, 49
+            console.log(code, codes[code]); // 1, 41, 44, 49
         }
 
         let codes2 = {
@@ -57,7 +69,7 @@
         };
 
         for (let code in codes2) {
-            console.log(+code); // 49, 41, 44, 1
+            console.log(+code, codes2[code]); // 49, 41, 44, 1
         }
     </script>
 </head>
