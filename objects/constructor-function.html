@@ -5,20 +5,42 @@
     <meta charset="utf-8">
     <title>My test page</title>
     <script>
-        function User(name) {
-            // this = {};  (implicitly)
-
-            // add properties to this
-            this.name = name;
-            this.isAdmin = false;
-
-            // return this;  (implicitly)
+        function User(name){
+            //this = {}
+            this.name = name;  //this = {name: 'John'}
+            this.isAdmin = false; //this = {name: 'John', isAdmin: false}
+            //return this;
+            // return "hello";
+            // return {x:1, y:2};
         }
 
-        let user = new User("Jack");
+        let user1 = new User('John'); //{name: 'John', isAdmin: false}
+        console.log(user1);
+        let user3 = new User('Miss Xing');
+        console.log(user3);
+        // console.log(user1.name);
+        // console.log(user1.isAdmin);
 
-        console.log(user.name); // Jack
-        console.log(user.isAdmin); // false
+        // let user2 = User('Edward'); 
+        // console.log(user2); //undefined
+
+
+        function Person(fname, lname){
+            //this = {}
+            this.firstname = fname; //this = {firstname: 'Miss'}
+            this.lastname = lname; //this = {firstname: 'Miss', lastname: 'Xing'}
+
+            this.getFullName = function(){
+                return `${this.firstname} ${this.lastname}`;
+            }   // this = {firstname: 'Miss', lastname: 'Xing', getFullName: function(){....}}
+            // return this;
+        }
+
+        const p1 = new Person('Miss', 'Xing'); //p1={firstname: 'Miss', lastname: 'Xing', getFullName: function(){....}}
+        console.log(p1.getFullName());
+
+        const p2 = new Person('Tina', 'Xing'); //{firstname: 'Tina', lastname: 'Xing', getFullName: function(){....}}
+        console.log(p2.getFullName());
 
     </script>
 </head>
