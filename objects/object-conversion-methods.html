@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+       
+        let user = {
+            name: "Miss Xing",
+            age: 18,
+
+            [Symbol.toPrimitive](hint) {
+                alert(`hint: ${hint}`);
+                return hint == "string" ? `{name: "${this.name}"}` : this.age;
+            }
+        };
+
+        // conversions demo:
+        alert(user); // hint: string -> {name: "John"}
+        alert(+user); // hint: number -> 18
+        alert(user + 500); // hint: default -> 518
+
+        let student = {
+            id: 1001,
+            name: 'John'
+        }
+        alert(user);
+        alert(user.valueOf() === user);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

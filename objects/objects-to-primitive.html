@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        let user = {
+            name: 'Miss Xing',
+            gender: 'Female'
+        };
+
+        alert(user);
+
+        let obj = {
+            x: 10
+        };
+        obj[user] = 20;
+        console.log(obj);
+        console.log(obj[user]);
+
+
+        //object to number
+        // explicit conversion
+        let num = Number(obj);
+        console.log(num);
+
+        // maths (except binary plus)
+        let n = +new Date(); // unary plus
+        console.log(n);
+
+        let delta = new Date() - new Date();
+        console.log(delta);
+
+        //object to default
+        let total = { x: 1 } + { y: 2 };
+
+        // obj == number uses the "default" hint
+        if ({ i: 9 } == 1) {
+            //TODO
+        };
+
+       
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
