@@ -5,14 +5,19 @@
     <meta charset="utf-8">
     <title>My test page</title>
     <script>
-       
+
         let user = {
             name: "Miss Xing",
             age: 18,
-
             [Symbol.toPrimitive](hint) {
-                alert(`hint: ${hint}`);
+                console.log(`hint: ${hint}`);
                 return hint == "string" ? `{name: "${this.name}"}` : this.age;
+            },
+            toString() {
+                return `{name: ${this.name}}`;
+            },
+            valueOf(){
+                return this.age;
             }
         };
 
@@ -25,8 +30,10 @@
             id: 1001,
             name: 'John'
         }
-        alert(user);
-        alert(user.valueOf() === user);
+        alert(student);
+        alert(student.valueOf() === student);
+
+        
 
     </script>
 </head>

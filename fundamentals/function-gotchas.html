@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        function greeting(){
+            console.log('Hi from Miss Xing');
+        }
+        const result = greeting();
+        console.log(result);
+
+        function printName(name){
+            console.log(`Your name is: ${name}`);
+        }
+        printName();
+
+        function printName2(name = 'Miss Xing'){
+            console.log(`Your name is: ${name}`);
+        }
+        printName2();
+        printName2('Edward');
+
+        function printArgs(){
+            console.log('No arguments');
+        }
+
+        function printArgs(arg1){
+            console.log(`1 argument: ${arg1}`);
+        }
+
+        function printArgs(arg1, arg2){
+            console.log(`2 arguments: ${arg1} ${arg2}`);
+        }
+
+        var printArgs = function(){
+            console.log('No arguments');
+        }
+
+        var printArgs = function(arg1){
+            console.log(`1 argument: ${arg1}`);
+        }
+
+        var printArgs = function(arg1, arg2){
+            console.log(`2 arguments: ${arg1} ${arg2}`);
+        }
+
+        printArgs(); //2 arguments: undefined undefined
+        printArgs(10); //2 arguments: 10 undefined
+        printArgs(20, 30); // 2 arguments: 20 30
+        printArgs(40, 50, 60, 70);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
