@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        function myTag(strings, personExp, ageExp) {
+            let str0 = strings[0]; // "That "
+            let str1 = strings[1]; // " is a "
+            let str2 = strings[2]; // "."
+
+            let ageStr;
+            if (ageExp > 99) {
+                ageStr = 'centenarian';
+            } else {
+                ageStr = 'youngster';
+            }
+
+            return `${str0}${personExp}${str1}${ageStr}${str2}`;
+        }
+
+        let person = 'Miss Xing';
+        let age = 18;
+        let output = myTag`That ${person} is a ${age}.`;
+
+        console.log(output);
+        // That Miss Xing is a youngster.
+
+        console.log('I like:\n Banana,\n Apple,\n Pineapple.');
+        console.log("\u00A9"); // ©
+        console.log("\u{1F60D}"); // 😍, a smiling face symbol
+        console.log('I\'m the BEST!');
+
+        const greeting = 'Hello from Miss Xing';
+        console.log(greeting.length); //20
+        console.log(greeting[0]); //H
+        console.log(greeting.charAt(6)); //f
+        console.log(greeting[greeting.length - 1]); //g
+        console.log(greeting[greeting.length]); //undefined
+        console.log(greeting.charAt(greeting.length)); // '' (an empty string)
+
+        const username = 'Xing';
+        username[0] = 'A'; //doesn't work
+        console.log(username);
+
+        let str = '';
+
+        for (let i = 65; i <= 220; i++) {
+            str += String.fromCodePoint(i);
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+    <h1>Open console to see result!</h1>
+</body>
+
+</html>
