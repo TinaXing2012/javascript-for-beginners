@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const myname = 'Miss Xing';
+        console.log(myname.length); //9
+
+        console.log(myname[0], myname[8]);
+        console.log(myname.charAt(0), myname.charAt(8));
+        console.log(myname[-1], myname[19]);
+        console.log('----',myname.charAt(-1), myname.charAt(19), '+++++');
+
+        let reversed = '';
+        for(let i = myname.length - 1; i >= 0; i--){
+            // reversed += myname[i];
+            reversed += myname.charAt(i);   
+        }
+        console.log(reversed);
+
+
+        let str = 'Hello';
+        str[0] = 'A';
+        console.log(str);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
