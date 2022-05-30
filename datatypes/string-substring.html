@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const str = '12354abcde';
+
+        console.log(str.slice(0, 5));
+        console.log(str.slice(3));
+        console.log(str.slice(-4, -1)); //start from -4
+        console.log(str.slice(-7, -3)); //45ab
+
+        console.log('----- substring demo -----');
+        console.log(str.substring(0, 5));
+        console.log(str.substring(4));
+        console.log(str.substring(-4, -1));
+        console.log(str.substring(5, 0), str.substring(0, 5));
+
+        console.log('----- substr demo -----');
+        console.log(str.substr(0, 4));
+        console.log(str.substr(5, 2));
+        console.log(str.substr(-7, 5));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
