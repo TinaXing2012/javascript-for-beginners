@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const str = 'abcdefghiABCDEFGHI';
+        const index = str.indexOf('A');
+        console.log(index);
+        const index2 = str.indexOf('bc', 9);
+        console.log(index2);
+
+        console.log(str.includes('EF'));
+        console.log(str.includes('EF', 17));
+
+        console.log(str.startsWith('a'));
+        console.log(str.startsWith('bc', 1));
+
+        console.log(str.endsWith('I'));
+        console.log(str.endsWith('e', 5));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
