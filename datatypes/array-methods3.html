@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        const fruits = ['banana', 'apple', 'pineapple', 'strawberry', 'raspberry', 'blueberry'];
+        const res1 = fruits.find(item => item.endsWith('berry'));
+        console.log(res1);
+
+        // fruits.filter((item, index, array) => console.log(item, index, array));
+        // const res2 = fruits.filter(item => item.endsWith('berry'));
+        const res2 = fruits.filter(function(item){
+            return item.endsWith('berry');
+        })
+        console.log(res2);
+
+        const res3 = fruits
+                        .filter(item => item.endsWith('berry'))
+                        .map((item, index, array) => item.length);
+        console.log(res3);
+
+        const grades = [80, 70, 99, 85, 87, 67];
+        let sum = grades.reduce((accum, current, index, array) => accum + current, 0);
+        console.log(sum);
+        console.log('average: ' + sum/grades.length);
+
+        let average2 = grades.reduce((accum, current, index, array) => accum + current/array.length, 0);
+        console.log('average 2: ' + sum/grades.length);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
