@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        const arr1 = new Array(); //not widely used
+        arr1[0] = 'A';
+        arr1[1] = 'B';
+        console.log(arr1);
+
+        const arr2 = []; //empty array
+        arr2[0] = 'Miss';
+        arr2[1] = 'Xing';
+        console.log(arr2);
+
+        const arr3 = ['Hello', 'Hi', 'Huanyi'];
+        arr3[3] = 'Welcome';
+        arr3.push('1');
+        console.log(arr3);
+        console.log(arr3[1]);
+        console.log('at: ' + arr3.at(0));
+        console.log('last element: ' + arr3[arr3.length - 1]);
+        console.log("at to get last element: " + arr3.at(-1));
+        console.log(arr3.at(-2));
+
+        //Length property demo
+        console.log('------Length property demo-----');
+        const arr4 = ['a', 'b', 'c', 'd'];
+        console.log(arr4.length);
+        arr4[19] = 'Surprise...'; //['a', 'b', 'c', 'd','undefined'..., 'Surprise.....']
+        console.log(arr4.length);
+        console.log(arr4);
+
+        console.log('==========for loop==========')
+        for(let i = 0; i < arr4.length; i++){
+            console.log(arr4[i]);
+        }
+        console.log('==========for of==========')
+        for(let item of arr4){
+            console.log(item);
+        }
+
+        console.log('==========for in NOT RECOMMEND==========')
+        for(let val in arr4){
+            console.log(arr4[val]);
+        }
+
+        console.log('----------forEach method-----');
+        arr4.forEach((item, index, array)=>{
+            console.log(item, index, array);
+        });
+        arr4.forEach(item => console.log(item));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
