@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+
+        const arr = ['a', 'b', 'c', 'd', 'e'];
+        arr.splice(2); //2 is index
+        console.log(arr);
+
+        const arr2 = ['a', 'b', 'c', 'd', 'e'];
+        const deletedElems = arr2.splice(2, 2);
+        console.log(arr2);
+        console.log('Deleted Elements: ' + deletedElems);
+
+        const arr3 = ['a', 'b', 'c', 'd', 'e'];
+        arr3.splice(2, 0, 'Miss', 'Xing');
+        console.log(arr3);
+
+        console.log('-----slice demos------');
+        const arr4 = ['a', 'b', 'c', 'd', 'e'];
+        const slice1 = arr4.slice();
+        console.log(arr4);
+        console.log(slice1);
+        const slice2 = arr4.slice(2);
+        console.log(slice2);
+
+        const arr5 = ['a', 'b', 'c', 'd', 'e'];
+        const slice3 = arr5.slice(2, 4);
+        console.log(slice3);
+
+        console.log('-----concat demos------');
+        const array1 = [1, 2, 3];
+        const array2 = ['a', 'b', 'c', 'd', 'e'];
+        const result = array1.concat(array2, 'Miss', 'Xing');
+        console.log(result);
+
+        const result2 = [...array1, ...array2, 'Miss', 'Xing'];
+        console.log(result2);
+
+        console.log('-----split, join demos------');
+        const str = 'This is a split demo';
+        const strArr = str.split(' ');
+        console.log(strArr);
+        const converted = strArr.join('----');
+        console.log(converted);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
