@@ -20,11 +20,50 @@
             5: 5
         }
 
-        for(let key in obj) {
+        for (let key in obj) {
             console.log(`${key}: ${obj[key]}`);
         }
-        
-        const arr = [1, 1.2, true, 'hello', {firstname: 'miss xing', lastname: ''}, [1,2,3]];
+
+        const arr = [1, 1.2, true, 'hello', { firstname: 'miss xing', lastname: '' }, [1, 2, 3]];
+
+
+        const each = (array, callback) => {
+            for (let index = 0; index < array.length; ++index) {
+                const item = array[index];
+                callback(item);
+            }
+        };
+        const doSomething = (item) => console.log(item);
+
+        each([], () => { });
+
+        each(['a', 'b', 'c'], doSomething);
+        // `each` is called with `PACKED_ELEMENTS`. V8 uses an inline cache
+        // (or “IC”) to remember that `each` is called with this particular
+        // elements kind. V8 is optimistic and assumes that the
+        // `array.length` and `array[index]` accesses inside the `each`
+        // function are monomorphic (i.e. only ever receive a single kind
+        // of elements) until proven otherwise. For every future call to
+        // `each`, V8 checks if the elements kind is `PACKED_ELEMENTS`. If
+        // so, V8 can re-use the previously-generated code. If not, more work
+        // is needed.
+
+        each([1.1, 2.2, 3.3], doSomething);
+        // `each` is called with `PACKED_DOUBLE_ELEMENTS`. Because V8 has
+        // now seen different elements kinds passed to `each` in its IC, the
+        // `array.length` and `array[index]` accesses inside the `each`
+        // function get marked as polymorphic. V8 now needs an additional
+        // check every time `each` gets called: one for `PACKED_ELEMENTS`
+        // (like before), a new one for `PACKED_DOUBLE_ELEMENTS`, and one for
+        // any other elements kinds (like before). This incurs a performance
+        // hit.
+
+        each([1, 2, 3], doSomething);
+        // `each` is called with `PACKED_SMI_ELEMENTS`. This triggers another
+        // degree of polymorphism. There are now three different elements
+        // kinds in the IC for `each`. For every `each` call from now on, yet
+        // another elements kind check is needed to re-use the generated code
+        // for `PACKED_SMI_ELEMENTS`. This comes at a performance cost.
 
     </script>
 </head>
