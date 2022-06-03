@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        const obj = {
+            property1: 'property1',
+            property2: 'property2',
+            0: 0,
+            1: 1,
+            property3: 'property3',
+            property4: 'property4',
+            2: 2,
+            3: 3,
+            property5: 'property5',
+            property6: 'property6',
+            4: 4,
+            5: 5
+        }
+
+        for(let key in obj) {
+            console.log(`${key}: ${obj[key]}`);
+        }
+        
+        const arr = [1, 1.2, true, 'hello', {firstname: 'miss xing', lastname: ''}, [1,2,3]];
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
