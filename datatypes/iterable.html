@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <script>
+        // const str = 'Miss Xing';
+        // for(let s of str){
+        //     console.log(s);
+        // }
+
+        const obj = {
+            from: 1,
+            to: 10
+        };
+
+        obj[Symbol.iterator] = function () {
+            console.log('inside Symbol.iterator method');
+            return {
+                current: this.from,
+                end: this.to,
+
+                next() {
+                    console.log('inside next.....');
+                    if (this.current <= this.end) {
+                        return { done: false, value: this.current++ }
+                    } else {
+                        return { done: true };
+                    }
+
+                }
+            }
+        }
+
+        // for (let v of obj) {
+        //     console.log(v);
+        // }
+
+
+        let arrayLikeObj = {
+            0: 'Miss',
+            1: 'Xing',
+            2: 'Hi',
+            3: 'Huanyin',
+            length: 4
+        };
+
+        for(let i = 0; i < arrayLikeObj.length; i++){
+            console.log(arrayLikeObj[i]);
+        }
+        // arrayLikeObj.push(1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
