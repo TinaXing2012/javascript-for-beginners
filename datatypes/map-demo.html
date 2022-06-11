@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const states = new Map();
+        states.set('IA', 'Iowa');
+        states.set('CA', 'California');
+        states.set('TX', 'Texas');
+
+        console.log(states);
+
+        console.log(states.get('IA'));
+        console.log(states.get('TX'));
+        console.log(states.get('ABC'));
+
+        console.log(states.has('ABC'));
+
+        console.log(states.delete('TX'));
+        console.log(states);
+        console.log(states.size);
+
+        states.clear();
+        console.log(states);
+        console.log(states.size);
+
+        console.log('------------------');
+
+
+        const studentsMap = new Map();
+        studentsMap.set(10001, 'John');
+        studentsMap.set(10002, 'Miss Xing');
+        studentsMap.set(10003, 'Edward');
+        studentsMap.set(10005, 'Irene');
+
+        studentsMap.set({id: 10006}, 'Willow');
+
+
+        //map.keys
+        for(let key of studentsMap.keys()){
+            console.log(`Key: ${key},  value: ${studentsMap.get(key)}`);
+        }
+
+        for(let value of studentsMap.values()){
+            console.log(`value: ${value}`);
+        }
+
+        for(let entry of studentsMap.entries()){
+            console.log(`Key: ${entry[0]}, Value: ${entry[1]}`);
+        }
+
+        for(let pair of studentsMap){
+            console.log(pair);
+            console.log(pair[0], pair[1]);
+        }
+
+        console.log('================');
+
+        const obj = {
+            1: 'Hi'
+        };
+        
+        obj['1'] = 'Hello';
+
+        const person = {
+            name: 'john', 
+            [Symbol.toPrimitive]: function(){
+                return this.name;
+            }
+        };
+        obj[person] = 'hahaha....';
+
+        const point = {
+            x:1,
+            y:2,
+            [Symbol.toPrimitive]: function(){
+                return `[${this.x}, ${this.y}]`;
+            }
+        
+        };
+        obj[point] = 'QQQQQQ';
+
+        console.log(obj);
+        
+
+        const map = new Map();
+        map.set(1, 'Hi');
+        map.set('1', 'Hello');
+        map.set(person, 'hahaha....');
+        map.set(point, 'QQQQQ');
+        console.log(map);
+
+        console.log('**************');
+
+        const wrongMap = new Map();
+        wrongMap['greeting'] = 'Hi';
+        wrongMap['bala'] = 'Something';
+        console.log(wrongMap);
+        console.log(wrongMap.size);
+        for(let pair of wrongMap.entries()){
+            console.log(pair);
+        }
+
+    </script>
+</head>
+<body>
+    Open console to see Result..
+</body>
+</html>
