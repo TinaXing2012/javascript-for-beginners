@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const set = new Set();
+        set.add(1);
+        set.add('1');
+        console.log(set);
+
+        const obj1 = { x: 1 };
+        const obj2 = { x: 1 };
+        console.log(obj1 === obj2);
+        set.add(obj1);
+        set.add(obj2);
+        console.log(set);
+
+        set.add(1);
+        set.add('1');
+        set.add(obj1);
+        console.log(set);
+
+        console.log('---------');
+
+        const set2 = new Set([1, 1, 3, 4, 7, 1, 6, 7, 4]);
+        set2.delete(1);
+        // set2.clear();
+        console.log(set2.size);
+        console.log(set2);
+        console.log(set2.has(4));
+        // console.log(set2[0]);
+
+
+
+
+        function removeDuplicatesInArray(arr) {
+            return [...new Set(arr)];
+        }
+        const result = removeDuplicatesInArray([1, 1, 3, 4, 7, 1, 6, 7, 4]);
+        console.log('=====');
+        console.log(result);
+        
+        console.log('***************************');
+        const names = new Set(['John', 'Miss Xing', 'Tina', 'Edward','Miss Xing', 'Tina', 'Edward']);
+
+        for(let name of names){
+            console.log(name);
+        }
+
+        names.forEach((val1, val2, myset) => {
+            console.log(val1, val2, myset);
+        });
+
+        for(let name of names.keys()){
+            console.log(name);
+        }
+
+        for(let name of names.values()){
+            console.log(`inside names.values: ${name}`);
+        }
+       
+        for(let entry of names.entries()){
+            console.log(entry[0], entry[1]);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
