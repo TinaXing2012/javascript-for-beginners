@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const weakMap = new WeakMap();
+        const person = {name: 'Miss Xing'};
+        weakMap.set(person, 'something');
+        weakMap.set(person, 'balabala...');
+        weakMap.set({name: 'Miss Xing'}, '1111111111');
+        console.log(weakMap);
+        console.log(weakMap.get(person));
+        console.log(weakMap.has(person));
+        console.log(weakMap.delete(person));
+        console.log(weakMap.delete({name: 'Miss Xing'}));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
