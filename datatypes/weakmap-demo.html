@@ -18,6 +18,78 @@
         console.log(weakMap.has(person));
         console.log(weakMap.delete(person));
         console.log(weakMap.delete({name: 'Miss Xing'}));
+
+        console.log('------ demos for 2nd WeakMap video-----');
+
+        const fullname = {
+            firstname: 'Miss',
+            lastname: 'Xing'
+        }
+
+        const p1 = {
+            age: 20,
+            [fullname]: 'Great!!!',
+            1: 'Hello'
+        };
+        const address = {
+            state: 'Iowa',
+            country: 'US'
+        };
+        p1[address] = 'Hahah...';
+        console.log(p1);
+
+        console.log('****************');
+
+        class MyMap {
+
+            constructor(){
+                this.keys = [];
+                this.values = [];
+            }
+
+            set(key, value) {
+                this.keys.push(key);
+                this.values.push(value);
+            }
+
+            get(key){
+               const index = this.keys.findIndex(item => item === key);
+               return this.values[index];
+            }
+        }
+
+        const mymap = new MyMap();
+        mymap.set('myname', 'miss Xing');
+        mymap.set('myname', 'miss Xing222');
+        mymap.set(1, 'balabala...');
+
+        console.log(mymap.get('myname'));
+        console.log(mymap.get(1));
+        console.log('-------Separator 1-------------');
+
+        const map = new Map();
+        let p2 = {name: 'miss xing'};
+        map.set(p2, 'Hi.....');
+        
+        // p2 = null;
+
+        console.log(map);
+       
+        p2 = null;
+        setTimeout(() => {
+            
+            console.log(map);
+        }, 10000);
+
+        console.log('-------Separator 2-------------');
+        const map2 = new WeakMap();
+        let num1 = 123;
+        map2.set(num1, 'fdsfdf');
+        num1 = null;
+       console.log(map2.get(123));
+       
+
+
     </script>
 </head>
 
