@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const person = {
+            firstname: 'John',
+            lastname: 'Smith',
+            age: 20
+        }
+
+        for(let key of Object.keys(person)){
+            console.log(key);
+        }
+
+        for(let val of Object.values(person)){
+            console.log(val);
+        }
+
+        for(let entry of Object.entries(person)){
+            console.log(entry);
+        }   
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
