@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const map = new WeakMap();
+        function countVisits(user){
+            let count = map.get(user) || 0;
+            map.set(user, ++count);
+        }
+
+        let john = {name: 'John'};
+        countVisits(john);
+        countVisits(john);
+
+        const john2 = {name: 'John2'};
+        countVisits(john2);
+        countVisits(john2);
+        countVisits(john2); 
+
+        john = null;
+
+        console.log(map);
+
+        // setTimeout(() => console.log(map), 10000);
+
+        console.log('------use case 2-------');
+
+        const cache = new WeakMap();
+        function doSomethingOnObj(obj){
+            let result;
+            if(cache.has(obj)){
+                console.log('inside if....');
+                result = cache.get(obj);
+            } else {
+                console.log('inside else=====');
+                result = obj.toString(); //in the real, it should have some business logic;
+                cache.set(obj, result);
+            }         
+            return result;
+        }
+
+        const obj = {x:1, y:2};
+        doSomethingOnObj(obj);
+        doSomethingOnObj(obj);
+        doSomethingOnObj(obj);
+        doSomethingOnObj(obj);
+        doSomethingOnObj(obj);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
