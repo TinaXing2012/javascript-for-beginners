@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const countryNames = ['US', 'China', 'Canada'];
+        let v1 = countryNames[0];
+        let v2 = countryNames[1];
+        let v3 = countryNames[2];
+        console.log(v1, v2, v3);
+
+        let [name1, name2, name3] = countryNames;
+        console.log(name1, name2, name3);
+
+        let [fruit1, , , fruit4] = ['Apple', 'Banana', 'Mongo', 'Watermelon', 'Mulberry'];
+        console.log(fruit1, fruit4);
+
+        let [letter1, , letter3] = 'hello world';
+        console.log(letter1, letter3);
+        let [, , lastNo] = new Set([11, 23, 25]);
+        console.log(lastNo);
+
+        let user = {};
+        console.log(user);
+        [user.firstname, user.lastname] = ['Tina', 'Xing'];
+        //user.firstname = ['Tina', 'Xing'][0];
+        //user.lastname = ['Tina', 'Xing'][1];
+        console.log(user);
+
+
+        let point = {
+            x: 2,
+            y: 7,
+            z: 9
+        }
+       
+        for(let entry of Object.entries(point)){
+            console.log(entry[0], entry[1]);
+        }
+
+        for(let [propertyName, propertyValue] of Object.entries(point)){
+            console.log(propertyName, propertyValue);
+        }
+
+        let first = 22;
+        let second = 99;
+
+        [second, first] = [first, second]; //swap
+        console.log(first, second);
+
+        const [flower1 = 'Pink Lily', flower2 = 'Daisy'] = ['sunflower'];
+        console.log(flower1, flower2);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
