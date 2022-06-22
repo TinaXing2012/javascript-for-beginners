@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let person = {
+            firstname: 'Tina',
+            lastname: 'Xing'
+        }
+
+        // const firstname = person.firstname;
+        // const lastname = person.lastname;
+        // console.log(firstname, lastname);
+
+        const {lastname, firstname} = person;
+        console.log(firstname, lastname);
+
+        const {x, y} = person; //no properties on person named x or y
+        console.log(x, y);
+
+        let num1, num2;
+        ({num1, num2} = {num1: 20, num2: 30});
+        console.log(num1, num2);
+
+        const address = {
+            street: '1000 N 10th',
+            state: 'Iowa'
+        };
+
+        const {street:addr1, state:addr2} = address;
+        console.log(addr1, addr2);
+
+        const {m = 1, n = 2} = {n: 99};
+        console.log(m, n);
+
+        const {no1:i=66, no2:j = 888888} = {no1: 100}
+        console.log(i, j);
+
+        console.log('------------------');
+
+        function foo({username: user, password:pwd, role='vip'}){
+            console.log(user, pwd, role);
+        }
+
+        foo({username:'missxing', password: '123456'});
+        foo({username:'tina', password: '000', role: 'admin'});
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
