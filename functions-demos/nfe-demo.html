@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let fibnacci = function fib(n) {
+            if (n < 0) {
+                throw new Error('n must be positive value');
+            } else if (n === 0 || n === 1) {
+                return n;
+            } else {
+                return fib(n - 1) + fib(n - 2);
+            }
+        }
+
+        const foo = fibnacci;
+        fibnacci = null;
+
+        console.log(foo(8));
+        console.log(foo(5));
+
+        // function bar(){
+        //     console.log('bar...');
+        // }
+        // bar();
+
+        // const func = function foo(){
+        //     console.log('first');
+        //     console.log(foo);
+        // }
+
+        // func();
+
+        // foo();
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>ml
