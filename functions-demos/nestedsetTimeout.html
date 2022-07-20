@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let counter = 0;
+        function foo(name, i){ //function foo will have logic
+            console.log(name, i);
+        }
+
+        setInterval(function(){
+            foo('interval', counter++);
+        }, 1000);
+
+
+        let counter2 = 0;
+        let delay = 1000;
+        setTimeout(function func(){
+            foo('timeout', counter2++);
+            if(counter > 10) {
+                delay = delay * 2;
+            }
+            setTimeout(func, delay);
+        }, delay);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
