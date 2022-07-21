@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 'use strict';
+        function foo() {
+            console.log(this);
+            console.log(arguments);
+
+            const func = () => {
+                console.log(this);
+                console.log(arguments);
+            }
+            func(8, 9, 11);
+        }
+
+        foo(1, 2, 5, 6);
+
+        console.log('========');
+
+        // let arguments = 123;
+        const bar = () => {
+            // console.log(arguments);
+        }
+        bar();
+
+        console.log('=====*********===');
+
+        const student = {
+            id: 610001,
+            fname: 'John',
+            lname: 'Smith',
+            getName: function(){
+                return this.fname + ' ' + this.lname;
+            }
+        }
+
+        console.log(student.getName());
+
+        console.log('=====****^^^^^^^^^*****===');
+
+        const group = {
+            title: 'Miss Xing',
+            names: ['Tina', 'Lucy', 'John', 'Edward'],
+            printNames: function(){
+                console.log(this); //this = group
+                this.names.forEach((val) => {
+                    console.log(`${this.title} --- ${val}`);
+                });
+            }
+        }
+        group.printNames();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

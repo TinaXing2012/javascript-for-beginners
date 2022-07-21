@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const user = {
+            firstname: 'Tina',
+            lastname: 'Xing',
+            printName: function (greeting, end) {
+                console.log(this);
+                console.log(`${greeting} from ${this.firstname} ${this.lastname} ${end}`);
+            }
+        }
+
+        // setTimeout(user.printName, 2000);
+
+        //1. wrapper
+        setTimeout(() => user.printName('Hi', '*******'), 5000);
+        setTimeout(function () {
+            user.printName('Hi', '*******');
+        }, 5000);
+
+        //2. bind
+        setTimeout(user.printName.bind(user, 'Hello', '=========' ), 2000);
+
+        //3. wrapper + call
+        setTimeout(() => user.printName.call(user, 'Hello', '^^^^^^^^'), 2000);
+
+        //4. wrapper + apply
+        setTimeout(() => user.printName.apply(user, ['Hello', '@@@@@@']), 2000);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

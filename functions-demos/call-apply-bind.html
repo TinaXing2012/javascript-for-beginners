@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const user = {
+            firstname: 'Tina',
+            lastname: 'Xing',
+            printName(){
+                console.log(`${this.firstname} ${this.lastname}`);
+            }
+        }
+
+        // user.printName();
+
+        const user2 = {
+            firstname: 'Irene',
+            lastname: 'Xing'
+        }
+
+        user.printName.call(user2);
+        user.printName.apply(user2);
+        // let printNameUser2 = user.printName.bind(user2);
+        // printNameUser2();
+        user.printName.bind(user2)();
+
+
+        //to invoke a function in JS, there are 3 ways:
+        //foo()
+        //foo.call()
+        //foo.apply()
+
+        // function foo(arg1, arg2){
+        //     console.log(`this keyword: `, this);
+        //     console.log(arg1, arg2);
+        // }
+
+        // foo('a', 'b');
+        // foo.call('Hello', 1, 2);
+        // foo.apply({x:1, y:2}, ['a', 'b']);
+        // const bar = foo.bind(12);
+        // bar(777, 888);
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
