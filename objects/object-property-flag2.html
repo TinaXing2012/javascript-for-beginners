@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict';
+        const person = {
+            lastname: 'Smith'
+        };
+
+        console.log(Object.getOwnPropertyDescriptor(person, 'lastname'));
+        Object.defineProperty(person, 'lastname', {
+            value: 'Xing',
+            writable: false
+        });
+        console.log(Object.getOwnPropertyDescriptor(person, 'lastname'));
+
+        console.log('--------------');
+        Object.defineProperty(person, 'firstname', {
+            value: 'John',
+            writable: false,
+            enumerable: true,
+            configurable: true
+        });
+
+        console.log(person);
+        console.log(Object.getOwnPropertyDescriptor(person, 'firstname'));
+        // person.firstname = 'Tina';
+        console.log(person);
+
+        for(let prop in person){
+            console.log(`${prop}: ${person[prop]}`);
+        }
+
+        delete person.firstname;
+        console.log(person);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
